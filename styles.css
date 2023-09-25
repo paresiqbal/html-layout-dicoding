@@ -181,3 +181,21 @@ main {
   padding: 6px 10px;
   border-radius: 5px;
 }
+
+/* aside */
+aside {
+  float: right;
+  margin-top: 20px;
+}
+
+aside img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 800px) {
+  aside {
+    float: none;
+    width: 100%;
+  }
+}
