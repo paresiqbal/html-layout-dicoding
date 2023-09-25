@@ -155,61 +155,65 @@ body {
 @media screen and (min-width: 1200px) {
   .main {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between; /* This will push the .content and .side to opposite ends */
+    align-items: center; /* Vertically center the content */
   }
 
-  .side img {
-    width: 150px;
+  .content {
+    flex: 1; /* Allow the main content to take available space */
+  }
+
+  .side {
+    flex: 0;
+    margin-left: 20px; /* Add some spacing between the main content and aside */
   }
 }
 
 /* Main section of content */
-main {
-  margin: 0 20px;
-  margin-top: 10px;
+/* Base styles for the main container and blog content */
+.main {
+  display: flex;
+  flex-direction: column;
 }
 
 .main-title {
   text-align: center;
-  font-size: 35px;
-  padding-bottom: 20px;
-}
-
-.kafka {
-  color: #d83d84;
 }
 
 .blog-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex: 1;
+  overflow-x: auto; /* Add horizontal scrolling if needed */
 }
 
 .blog {
-  background: #b1aab1;
-  box-shadow: 4px 6px #888888;
-
-  padding: 6px 10px;
-  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
-/* aside */
-aside {
-  float: right;
-  margin-top: 20px;
-  flex: 1;
+/* Styles for the aside (sidebar) */
+.side {
+  max-width: 50%;
+  order: 2; /* By default, place it at the bottom for mobile */
 }
 
-aside img {
-  width: 100%;
-  height: auto;
+.side img {
+  max-height: 800px;
 }
 
-@media screen and (min-width: 800px) {
-  aside {
-    float: none;
-    width: 100%;
+/* Media query for screens wider than a certain width (desktop) */
+@media screen and (min-width: 768px) {
+  .main {
+    flex-direction: row;
+  }
+
+  .blog-container {
+    flex: 2; /* Adjust the width of the main content area */
+    overflow: hidden; /* Hide horizontal overflow */
+  }
+
+  .side {
+    max-width: 30%; /* Adjust the width of the sidebar */
+    order: 1; /* Place it to the right for desktop */
   }
 }
 
