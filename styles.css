@@ -186,6 +186,7 @@ main {
 aside {
   float: right;
   margin-top: 20px;
+  flex: 1;
 }
 
 aside img {
@@ -198,4 +199,11 @@ aside img {
     float: none;
     width: 100%;
   }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #ca254d;
 }
