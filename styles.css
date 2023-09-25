@@ -13,8 +13,6 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #2d1429;
-  display: flex;
-  justify-content: center;
 }
 
 .topnav a {
@@ -83,6 +81,13 @@ body {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+@media screen and (min-width: 601px) {
+  .topnav {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 600px) {
